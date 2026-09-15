@@ -9,13 +9,36 @@ const { generateToken, requireAuth } = require('./auth');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ----- MIDDLEWARE -----
-app.use(cors());
+// ============================================================
+// CONFIGURATION CORS (production + développement)
+// ============================================================
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:5500',
+  'http://127.0.0.1:3000',
+  'http://127.0.0.1:5500',
+  process.env.FRONTEND_URL // URL Netlify (ajoutée via Render)
+].filter(Boolean);
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Autoriser les requêtes sans origine (Postman, outils de test)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      console.warn('⚠️  CORS bloqué pour :', origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
 // ============================================================
-// ROUTES PUBLIQUES (accessibles à tous)
+// ROUTES PUBLIQUES
 // ============================================================
 
 // 1. Infos du restaurant
@@ -85,7 +108,6 @@ app.get('/api/admin/verify', requireAuth, (req, res) => {
 
 // ---- MESSAGES ----
 
-// Liste des messages
 app.get('/api/admin/messages', requireAuth, async (req, res) => {
   try {
     const snapshot = await messagesRef.orderBy('createdAt', 'desc').get();
@@ -96,7 +118,6 @@ app.get('/api/admin/messages', requireAuth, async (req, res) => {
   }
 });
 
-// Marquer un message comme lu
 app.put('/api/admin/messages/:id/read', requireAuth, async (req, res) => {
   try {
     await messagesRef.doc(req.params.id).update({ read: true });
@@ -106,7 +127,6 @@ app.put('/api/admin/messages/:id/read', requireAuth, async (req, res) => {
   }
 });
 
-// Supprimer un message
 app.delete('/api/admin/messages/:id', requireAuth, async (req, res) => {
   try {
     await messagesRef.doc(req.params.id).delete();
@@ -118,7 +138,6 @@ app.delete('/api/admin/messages/:id', requireAuth, async (req, res) => {
 
 // ---- RESTAURANT ----
 
-// Mettre à jour tout le restaurant
 app.put('/api/admin/restaurant', requireAuth, async (req, res) => {
   try {
     await restaurantRef.set(req.body, { merge: true });
@@ -136,4 +155,5 @@ app.listen(PORT, () => {
   console.log(`✅ Serveur lancé sur http://localhost:${PORT}`);
   console.log(`📁 Frontend : http://localhost:${PORT}`);
   console.log(`🔐 Admin    : http://localhost:${PORT}/admin.html`);
+  console.log(`🌍 Environnement : ${process.env.NODE_ENV || 'development'}`);
 });

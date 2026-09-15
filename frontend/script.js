@@ -1,5 +1,14 @@
 // ============================================================
-// CONFIGURATION DES IMAGES DU CARROUSEL
+// CONFIGURATION DE L'URL DE L'API
+// ============================================================
+// En local : on utilise le même serveur (localhost:3000)
+// En production : on utilise l'URL du backend Render
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? ''
+  : 'https://VOTRE-BACKEND.onrender.com'; // ⚠️ À REMPLACER après le déploiement Render
+
+// ============================================================
+// IMAGES DU CARROUSEL
 // ============================================================
 const heroImages = [
   'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80',
@@ -10,7 +19,7 @@ const heroImages = [
 ];
 
 // ============================================================
-// GESTION DU CARROUSEL
+// CARROUSEL
 // ============================================================
 let currentSlide = 0;
 let slideInterval = null;
@@ -56,7 +65,7 @@ function startSlider() {
 }
 
 // ============================================================
-// CHARGEMENT DES DONNÉES
+// DONNÉES
 // ============================================================
 let restaurantData = null;
 
@@ -102,7 +111,6 @@ function showCategory(index) {
     const div = document.createElement('div');
     div.className = 'menu-item';
 
-    // Construction de la carte avec image, infos, prix et bouton
     div.innerHTML = `
       <div class="menu-item-image">
         <img src="${item.image || 'https://via.placeholder.com/300x200?text=Plat'}" alt="${item.name}" loading="lazy" />
@@ -255,7 +263,7 @@ function initContactForm() {
     }
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, subject, message })
@@ -345,7 +353,7 @@ function initScrollAnimations() {
 // ============================================================
 async function loadData() {
   try {
-    const response = await fetch('/api/restaurant');
+    const response = await fetch(`${API_BASE_URL}/api/restaurant`);
     if (!response.ok) throw new Error('Erreur réseau');
     const data = await response.json();
     restaurantData = data;
@@ -368,12 +376,11 @@ async function loadData() {
     initScrollAnimations();
   } catch (error) {
     console.error('Erreur de chargement :', error);
-    alert('Impossible de charger les données. Vérifiez que le serveur est lancé.');
   }
 }
 
 // ============================================================
-// INIT
+// INITIALISATION
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   initSlider();

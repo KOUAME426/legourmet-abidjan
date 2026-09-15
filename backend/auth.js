@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-// Générer un token valable 24h
 function generateToken() {
   return jwt.sign(
     { role: 'admin' },
@@ -10,7 +9,6 @@ function generateToken() {
   );
 }
 
-// Middleware qui protège les routes admin
 function requireAuth(req, res, next) {
   const authHeader = req.headers.authorization;
 
