@@ -5,7 +5,7 @@
 // En production : on utilise l'URL du backend Render
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? ''
-  : 'https://VOTRE-BACKEND.onrender.com'; // ⚠️ À REMPLACER après le déploiement Render
+  : 'https://legourmet-abidjan.onrender.com'; // ⚠️ À REMPLACER après le déploiement Render
 
 // ============================================================
 // IMAGES DU CARROUSEL

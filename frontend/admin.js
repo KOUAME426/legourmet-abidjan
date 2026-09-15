@@ -1,9 +1,14 @@
 // ============================================================
 // CONFIGURATION
 // ============================================================
-const API_BASE = '/api';
-let TOKEN = localStorage.getItem('adminToken') || null;
-let restaurantData = null;
+// ============================================================
+// CONFIGURATION DE L'URL DE L'API
+// ============================================================
+const API_HOST = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? '' // En local, même serveur
+  : 'https://legourmet-abidjan.onrender.com'; // URL du backend Render
+
+const API_BASE = `${API_HOST}/api`;
 
 // ============================================================
 // OUTILS
