@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Gourmet — Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#accueil" class="logo">Le <span>Gourmet</span></a>
+      <nav class="nav-links" id="navLinks">
+        <!-- Le lien "Menu" a été supprimé pour éviter le doublon -->
+        <a href="#accueil" class="active">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+        <div class="nav-cta">
+          <a href="#menu" class="btn btn-primary"><i class="fas fa-utensils"></i> Menu</a>
+          <a href="#" class="btn btn-whatsapp" id="navWhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO (carrousel) -->
+  <section class="hero" id="accueil">
+    <div class="hero-slider" id="heroSlider"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-star"></i> Restaurant gastronomique</div>
+        <h1>Bienvenue au <br><span>Gourmet d'Abidjan</span></h1>
+        <p id="heroDescription">Une expérience culinaire unique au cœur d'Abidjan.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary"><i class="fas fa-utensils"></i> Voir le menu</a>
+          <a href="#" class="btn btn-whatsapp" id="heroWhatsApp"><i class="fab fa-whatsapp"></i> Commander sur WhatsApp</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><h3>15+</h3><p>Plats signature</p></div>
+          <div class="stat"><h3>4.8</h3><p>★ Avis clients</p></div>
+          <div class="stat"><h3>Depuis 2018</h3><p>L'excellence</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-dots" id="sliderDots"></div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Notre carte</span>
+        <h2 class="section-title">Menu <span>Gourmet</span></h2>
+        <p class="section-subtitle">Découvrez nos créations, préparées avec des produits frais et de saison.</p>
+      </div>
+      <div class="menu-tabs" id="menuTabs"></div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section class="about-section" id="apropos">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80" alt="Intérieur" loading="lazy" />
+        </div>
+        <div class="about-text">
+          <span class="section-label">Notre histoire</span>
+          <h2>L'art de la <span>table</span> depuis 2018</h2>
+          <p>Niché au cœur d'Abidjan, Le Gourmet est bien plus qu'un restaurant : une invitation à un voyage des sens. Notre cuisine mêle traditions ivoiriennes et techniques gastronomiques modernes.</p>
+          <p>Chaque plat est une œuvre d'art, élaboré avec des ingrédients soigneusement sélectionnés auprès de producteurs locaux. Notre équipe passionnée met un point d'honneur à vous offrir une expérience inoubliable.</p>
+          <ul class="about-features">
+            <li><i class="fas fa-check-circle"></i> Produits frais & locaux</li>
+            <li><i class="fas fa-check-circle"></i> Chef étoilé</li>
+            <li><i class="fas fa-check-circle"></i> Cadre élégant</li>
+            <li><i class="fas fa-check-circle"></i> Service personnalisé</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section class="gallery-section" id="galerie">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Instants gourmands</span>
+        <h2 class="section-title">Notre <span>Galerie</span></h2>
+        <p class="section-subtitle">Un aperçu de notre univers, de nos plats et de notre cadre d'exception.</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img src="" alt="Agrandissement" id="lightboxImg" />
+  </div>
+
+  <!-- AVIS -->
+  <section class="reviews-section" id="avis">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Témoignages</span>
+        <h2 class="section-title">Ce que nos <span>clients</span> disent</h2>
+        <p class="section-subtitle">Des retours sincères qui nous poussent à nous dépasser chaque jour.</p>
+      </div>
+      <div class="reviews-grid" id="reviewsGrid"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Prenez <span>contact</span></h2>
+        <p class="section-subtitle">Une question, une réservation ? N'hésitez pas à nous écrire.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Le <span>Gourmet</span></h2>
+          <p>Nous sommes à votre disposition pour toute information ou réservation. Répondez à l'appel de la gourmandise !</p>
+          <div class="contact-detail">
+            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><h4>Adresse</h4><p id="contactAddress">Cocody, Abidjan, Côte d'Ivoire</p></div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon"><i class="fas fa-phone-alt"></i></div>
+            <div><h4>Téléphone</h4><p id="contactPhone">+225 07 07 07 07 07</p></div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <div><h4>Email</h4><p id="contactEmail">contact@legourmet.ci</p></div>
+          </div>
+          <div class="contact-socials" id="contactSocials"></div>
+        </div>
+        <div class="contact-form">
+          <h3>Envoyez-nous un message</h3>
+          <p>Nous vous répondrons dans les plus brefs délais.</p>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formName">Nom complet</label>
+                <input type="text" id="formName" placeholder="Votre nom" required />
+              </div>
+              <div class="form-group">
+                <label for="formEmail">Email</label>
+                <input type="email" id="formEmail" placeholder="votre@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="formSubject">Sujet</label>
+              <input type="text" id="formSubject" placeholder="Réservation, information..." />
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Message</label>
+              <textarea id="formMessage" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Envoyer</button>
+          </form>
+        </div>
+      </div>
+      <div class="info-cards">
+        <div class="info-card">
+          <h4><i class="fas fa-clock"></i> Horaires d'ouverture</h4>
+          <div id="hoursList"></div>
+        </div>
+        <div class="info-card">
+          <h4><i class="fas fa-map-pin"></i> Nous trouver</h4>
+          <p style="font-size:0.95rem;color:var(--color-gray);margin-bottom:12px;" id="mapAddress">Cocody, Abidjan, Côte d'Ivoire</p>
+          <div class="map-container">
+            <iframe id="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.885292419419!2d-3.998618!3d5.322329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1e8b5e8b5e8b5e%3A0x8b5e8b5e8b5e8b5e!2sAbidjan%2C%20C%C3%B4te%20d%27Ivoire!5e0!3m2!1sfr!2sfr!4v1700000000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#accueil" class="logo">Le <span>Gourmet</span></a>
+          <p>Restaurant gastronomique à Abidjan, où chaque plat raconte une histoire de passion et de savoir-faire.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Suivez-nous</h4>
+          <div class="social-icons" id="footerSocials"></div>
+          <p style="margin-top:16px;font-size:0.85rem;">
+            <i class="fas fa-phone-alt" style="margin-right:8px;color:var(--color-accent);"></i>
+            <span id="footerPhone">+225 07 07 07 07 07</span>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="footerYear"></span> Le Gourmet d'Abidjan — Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTIONS -->
+  <div class="floating-actions">
+    <a href="#" class="floating-btn whatsapp" id="floatWhatsApp" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+      <span class="tooltip">WhatsApp</span>
+    </a>
+    <a href="#" class="floating-btn phone" id="floatPhone">
+      <i class="fas fa-phone-alt"></i>
+      <span class="tooltip">Appeler</span>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

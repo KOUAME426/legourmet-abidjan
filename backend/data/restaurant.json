@@ -1,0 +1,157 @@
+{
+  "name": "Le Gourmet",
+  "tagline": "L'art de la table depuis 2018",
+  "description": "Une expérience culinaire unique au cœur d'Abidjan. Saveurs authentiques, cadre d'exception et service irréprochable.",
+  "phone": "+225 05 54 07 83 22",
+  "whatsapp": "+2250554078322",
+  "email": "contact@legourmet.ci",
+  "address": "Cocody, Abidjan, Côte d'Ivoire",
+  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.885292419419!2d-3.998618!3d5.322329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1e8b5e8b5e8b5e%3A0x8b5e8b5e8b5e8b5e!2sAbidjan%2C%20C%C3%B4te%20d%27Ivoire!5e0!3m2!1sfr!2sfr!4v1700000000000",
+  "hours": [
+    { "day": "Lundi – Vendredi", "time": "12h00 – 15h00 · 19h00 – 23h00" },
+    { "day": "Samedi", "time": "12h00 – 16h00 · 19h00 – 00h00" },
+    { "day": "Dimanche", "time": "12h00 – 16h00 · 19h00 – 22h00" }
+  ],
+  "socials": [
+    { "name": "Instagram", "icon": "fab fa-instagram", "url": "https://instagram.com" },
+    { "name": "Facebook", "icon": "fab fa-facebook-f", "url": "https://facebook.com" },
+    { "name": "TikTok", "icon": "fab fa-tiktok", "url": "https://tiktok.com" },
+    { "name": "YouTube", "icon": "fab fa-youtube", "url": "https://youtube.com" }
+  ],
+  "menu": [
+    {
+      "category": "Entrées",
+      "items": [
+        {
+          "name": "Tartare de poisson",
+          "description": "Poisson frais mariné, avocat, mangue et coriandre",
+          "price": 4500,
+          "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=300&q=80"
+        },
+        {
+          "name": "Soupe de crevettes",
+          "description": "Crevettes tigrées, lait de coco, citronnelle et gingembre",
+          "price": 3800,
+          "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=300&q=80"
+        },
+        {
+          "name": "Salade de chèvre chaud",
+          "description": "Chèvre frais, miel, noix et roquette",
+          "price": 3200,
+          "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&q=80"
+        },
+        {
+          "name": "Bouchées de bœuf",
+          "description": "Bœuf mariné, sauce soja, sésame et oignons verts",
+          "price": 4000,
+          "image": "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "category": "Plats principaux",
+      "items": [
+        {
+          "name": "Poisson braisé",
+          "description": "Poisson local braisé, riz blanc, plantains et sauce graine",
+          "price": 6500,
+          "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=300&q=80"
+        },
+        {
+          "name": "Filet de bœuf",
+          "description": "Filet de bœuf, purée de patate douce, légumes de saison",
+          "price": 7800,
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80"
+        },
+        {
+          "name": "Poulet yassa",
+          "description": "Poulet mariné au citron et oignons, riz parfumé",
+          "price": 5500,
+          "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=300&q=80"
+        },
+        {
+          "name": "Riz gras",
+          "description": "Riz gras aux légumes, viande et épices traditionnelles",
+          "price": 4800,
+          "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=300&q=80"
+        },
+        {
+          "name": "Attiéké poisson",
+          "description": "Attiéké, poisson grillé, sauce tomate et oignons",
+          "price": 5200,
+          "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "category": "Desserts",
+      "items": [
+        {
+          "name": "Mousse au chocolat",
+          "description": "Mousse onctueuse au chocolat noir 70%, copeaux de cacao",
+          "price": 2800,
+          "image": "https://images.unsplash.com/photo-1541783245831-57d6fb0926d4?w=300&q=80"
+        },
+        {
+          "name": "Tarte aux fruits",
+          "description": "Tarte croustillante, fruits de saison et crème pâtissière",
+          "price": 3000,
+          "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&q=80"
+        },
+        {
+          "name": "Sorbet maison",
+          "description": "Sorbet aux fruits frais (mangue, ananas, passion)",
+          "price": 2200,
+          "image": "https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "category": "Boissons",
+      "items": [
+        {
+          "name": "Jus de bissap",
+          "description": "Jus de fleur d'hibiscus, gingembre et sucre de canne",
+          "price": 1500,
+          "image": "https://images.unsplash.com/photo-1546173159-3152f0a236e8?w=300&q=80"
+        },
+        {
+          "name": "Jus de gingembre",
+          "description": "Gingembre frais, citron et miel",
+          "price": 1500,
+          "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=300&q=80"
+        },
+        {
+          "name": "Cocktail signature",
+          "description": "Mélange de fruits exotiques et rhum local",
+          "price": 3500,
+          "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300&q=80"
+        },
+        {
+          "name": "Eau minérale",
+          "description": "Bouteille 50cl",
+          "price": 1000,
+          "image": "https://images.unsplash.com/photo-1562941552-1e7f6a2c02a8?w=300&q=80"
+        },
+        {
+          "name": "Vin rouge / blanc",
+          "description": "Au verre (12cl)",
+          "price": 3000,
+          "image": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=300&q=80"
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80",
+    "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600&q=80"
+  ],
+  "reviews": [
+    { "author": "Marie K.", "location": "Abidjan", "text": "Une expérience exceptionnelle ! Les plats sont raffinés et le cadre est magnifique. Je recommande vivement.", "rating": 5 },
+    { "author": "Jean P.", "location": "Cocody", "text": "Le meilleur restaurant d'Abidjan. Le service est impeccable et la cuisine est divine. Un vrai plaisir pour les sens.", "rating": 5 },
+    { "author": "Aïcha D.", "location": "Plateau", "text": "J'ai adoré l'attiéké poisson. Les saveurs sont authentiques et le personnel est très attentionné.", "rating": 4 },
+    { "author": "David L.", "location": "Marcory", "text": "Un cadre élégant et une cuisine inventive. Le filet de bœuf était parfaitement cuit. Je reviendrai !", "rating": 5 }
+  ]
+}

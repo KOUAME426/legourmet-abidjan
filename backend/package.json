@@ -1,0 +1,16 @@
+{
+  "name": "restaurant-backend",
+  "version": "1.0.0",
+  "description": "API pour le site du restaurant Le Gourmet",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.18.2",
+    "firebase-admin": "^12.7.0",
+    "jsonwebtoken": "^9.0.3"
+  }
+}
