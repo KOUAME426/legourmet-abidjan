@@ -1,7 +1,4 @@
 // ============================================================
-// CONFIGURATION
-// ============================================================
-// ============================================================
 // CONFIGURATION DE L'URL DE L'API
 // ============================================================
 const API_HOST = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
@@ -9,6 +6,12 @@ const API_HOST = (window.location.hostname === 'localhost' || window.location.ho
   : 'https://legourmet-abidjan.onrender.com'; // URL du backend Render
 
 const API_BASE = `${API_HOST}/api`;
+
+// ============================================================
+// ÉTAT GLOBAL
+// ============================================================
+let TOKEN = localStorage.getItem('adminToken') || null;
+let restaurantData = null;
 
 // ============================================================
 // OUTILS
@@ -52,6 +55,11 @@ $('loginForm').addEventListener('submit', async (e) => {
       method: 'POST',
       body: JSON.stringify({ password })
     });
+
+    if (!data.token) {
+      throw new Error('Aucun token reçu du serveur');
+    }
+
     TOKEN = data.token;
     localStorage.setItem('adminToken', TOKEN);
     enterDashboard();
