@@ -7,32 +7,13 @@ const { db, restaurantRef, messagesRef } = require('./firebase');
 const { generateToken, requireAuth } = require('./auth');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
+const PORT = process.env.PORT
 // ============================================================
-// CONFIGURATION CORS (production + développement)
+// CONFIGURATION CORS
 // ============================================================
-const allowedOrigins = [
-  'http://localhost:3000',
-  'http://localhost:5500',
-  'http://127.0.0.1:3000',
-  'http://127.0.0.1:5500',
-  process.env.FRONTEND_URL // URL Netlify (ajoutée via Render)
-].filter(Boolean);
-
-app.use(cors({
-  origin: function (origin, callback) {
-    // Autoriser les requêtes sans origine (Postman, outils de test)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      console.warn('⚠️  CORS bloqué pour :', origin);
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true
-}));
+// Autorise toutes les origines. La sécurité admin repose sur 
+// le token JWT, pas sur le CORS.
+app.use(cors());
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
